@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Invest-client/static/css/main.66197e3e.css",
+    "main.js": "/Invest-client/static/js/main.ce59cee8.js",
+    "static/js/787.a4b2a71c.chunk.js": "/Invest-client/static/js/787.a4b2a71c.chunk.js",
+    "index.html": "/Invest-client/index.html",
+    "main.66197e3e.css.map": "/Invest-client/static/css/main.66197e3e.css.map",
+    "main.ce59cee8.js.map": "/Invest-client/static/js/main.ce59cee8.js.map",
+    "787.a4b2a71c.chunk.js.map": "/Invest-client/static/js/787.a4b2a71c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.66197e3e.css",
+    "static/js/main.ce59cee8.js"
+  ]
+}
