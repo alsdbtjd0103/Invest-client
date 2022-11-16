@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import Menu from "./Menu";
 import styled from "styled-components";
+import Banner from "./Banner";
 
 const HeaderContainer = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ function Header() {
   return (
     <>
       <HeaderContainer>
-        <div>Virtual Investing</div>
+        <Banner />
         <AiOutlineMenu
           size={24}
           style={{ cursor: "pointer" }}
