@@ -54,7 +54,6 @@ const StyledSignButton = styled.div`
 `;
 
 const StyledSideMenu = styled.div`
-  overflow: hidden;
   display: flex;
   flex-direction: column;
   height:100%;
@@ -67,16 +66,15 @@ const StyledSideMenu = styled.div`
   transition: 0.8s;
   width: 375px;
   z-index: 999;
-  scroll-behavior: initial;
 `;
 
 const LeftContainer = styled.div`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
   backface-visibility: visible;
   top: 0;
-  position: absolute;
+  position: fixed;
   z-index: 998;
   transition: all 1s;
   visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
