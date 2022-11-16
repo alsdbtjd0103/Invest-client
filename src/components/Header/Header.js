@@ -21,7 +21,7 @@ function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const menuToggle = () => setMenuOpen((previous) => !previous);
   return (
-    <div style={{ width: "100%" }}>
+    <>
       <HeaderContainer>
         <div>Virtual Investing</div>
         <AiOutlineMenu
@@ -31,7 +31,7 @@ function Header() {
         />
       </HeaderContainer>
       <Menu isOpen={menuOpen} setOpen={menuToggle} />
-    </div>
+      </>
   );
 }
 

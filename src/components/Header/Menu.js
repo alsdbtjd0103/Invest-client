@@ -2,16 +2,34 @@ import { BsX } from "react-icons/bs";
 import styled from "styled-components";
 import React from "react";
 
-
+function SignButton({ title, onClick, color }) {
+  return (
+    <StyledSignButton color={color} onClick={onClick} >
+      <div aria-disabled>{title}</div>
+    </StyledSignButton>
+  );
+}
 
 function Menu({ isOpen, setOpen }) {
   return (
     <>
-    <LeftContainer isOpen={isOpen} onClick={setOpen} />
+      <LeftContainer isOpen={isOpen} onClick={setOpen} />
       <SideMenu isOpen={isOpen}>
         <CloseButtonContainer>
           <BsX style={{ cursor: "pointer" }} size={30} onClick={setOpen} />
         </CloseButtonContainer>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            flexDirection:'column'
+          }}
+        >
+          <SignButton title="Login" onClick={() => console.log("asd")} />
+          <SignButton title="Register" color = {'rgb(252, 213, 53)'} onClick={() => console.log("asd")} />
+        </div>
       </SideMenu>
     </>
   );
@@ -19,22 +37,35 @@ function Menu({ isOpen, setOpen }) {
 
 export default Menu;
 
+const StyledSignButton = styled.div`
+  display: flex;
+  height: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 90%;
+  align-items: center;
+  justify-content: center;
+  background-color: ${({color}) => color ? color : '#ffffff'};
+  margin-bottom: 20px;
+  
+  :hover{
+    color: ${({color}) => color ? null : 'rgb(252, 213, 53)' }
+  };
+`;
 
 const SideMenu = styled.div`
+  overflow: hidden;
   display: flex;
+  flex-direction: column;
   height: 100%;
   background-color: rgb(255, 255, 255);
-  position: absolute;
+  position: fixed;
   top: 0;
-  right: 0;
-  transition: 0.8s;
-  width: ${({ isOpen }) => {
-    if (isOpen) {
-      return "375px";
-    } else {
-      return "0px";
-    }
+  right: ${({ isOpen }) => {
+    return isOpen ? '0px' : '-375px'
   }};
+  transition: 0.8s;
+  width: 375px;
   z-index: 999;
 `;
 
@@ -45,9 +76,9 @@ const LeftContainer = styled.div`
   backface-visibility: visible;
   top: 0;
   position: absolute;
-  z-index:998;
-  transition:all 1s;
-  visibility: ${({isOpen}) => isOpen ? 'visible' : 'hidden'};
+  z-index: 998;
+  transition: all 1s;
+  visibility: ${({ isOpen }) => (isOpen ? "visible" : "hidden")};
 `;
 
 const CloseButtonContainer = styled.div`
@@ -55,7 +86,6 @@ const CloseButtonContainer = styled.div`
   justify-content: flex-end;
   align-items: center;
   width: 100%;
-  margin: 10px;
   height: 40px;
   overflow: hidden;
 `;
