@@ -1,20 +1,12 @@
 import React, { useState } from "react";
 
 import { AiOutlineMenu } from "react-icons/ai";
-import Menu from "./Menu";
+import SideMenu from "./SideMenu";
 import styled from "styled-components";
 import Banner from "./Banner";
+import MenuBlock from "./MenuBlock";
 
-const HeaderContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  background-color: #ffffff;
-  height: 64px;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 16px;
-  padding-right: 16px;
-`;
+
 
 
 
@@ -30,10 +22,22 @@ function Header() {
           style={{ cursor: "pointer" }}
           onClick={menuToggle}
         />
+     
+        <SideMenu isOpen={menuOpen} setOpen={menuToggle} />
       </HeaderContainer>
-      <Menu isOpen={menuOpen} setOpen={menuToggle} />
+      
       </>
   );
 }
 
 export default Header;
+const HeaderContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  height: 64px;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 16px;
+  padding-right: 16px;
+`;

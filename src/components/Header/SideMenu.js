@@ -10,11 +10,11 @@ function SignButton({ title, onClick, color }) {
   );
 }
 
-function Menu({ isOpen, setOpen }) {
+function SideMenu({ isOpen, setOpen }) {
   return (
     <>
       <LeftContainer isOpen={isOpen} onClick={setOpen} />
-      <SideMenu isOpen={isOpen}>
+      <StyledSideMenu isOpen={isOpen}>
         <CloseButtonContainer>
           <BsX style={{ cursor: "pointer" }} size={30} onClick={setOpen} />
         </CloseButtonContainer>
@@ -30,12 +30,12 @@ function Menu({ isOpen, setOpen }) {
           <SignButton title="Login" onClick={() => console.log("asd")} />
           <SignButton title="Register" color = {'rgb(252, 213, 53)'} onClick={() => console.log("asd")} />
         </div>
-      </SideMenu>
+      </StyledSideMenu>
     </>
   );
 }
 
-export default Menu;
+export default SideMenu;
 
 const StyledSignButton = styled.div`
   display: flex;
@@ -47,17 +47,17 @@ const StyledSignButton = styled.div`
   justify-content: center;
   background-color: ${({color}) => color ? color : '#ffffff'};
   margin-bottom: 20px;
-  
   :hover{
-    color: ${({color}) => color ? null : 'rgb(252, 213, 53)' }
+    color: ${({color}) => color ? null : 'rgb(252, 213, 53)' };
+    opacity: ${({color}) => color ?0.7 : null };
   };
 `;
 
-const SideMenu = styled.div`
+const StyledSideMenu = styled.div`
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height:100%;
   background-color: rgb(255, 255, 255);
   position: fixed;
   top: 0;
@@ -67,6 +67,7 @@ const SideMenu = styled.div`
   transition: 0.8s;
   width: 375px;
   z-index: 999;
+  scroll-behavior: initial;
 `;
 
 const LeftContainer = styled.div`
