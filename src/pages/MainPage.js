@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+
+import Boundary from "../components/Boundary.js";
 import Header from "../components/Header/Header.js";
 
 function MainPage() {
@@ -6,6 +7,7 @@ function MainPage() {
     <>
       <div>
         <Header />
+        <Boundary></Boundary>
       </div>
       
     </>
