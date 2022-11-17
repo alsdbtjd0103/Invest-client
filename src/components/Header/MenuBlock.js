@@ -40,13 +40,14 @@ const StyledContainer = styled.div`
     align-items: center;
     flex-direction: row;
     z-index:${({isOpen}) => {
-        return isOpen ? 0 : -2;
+        return isOpen ? 0 : -999;
     }};
     transition: 0.8s;
     position: relative;
     left:${({isOpen}) => {
         return isOpen ? 0 : '-100px';
     }};
+    
 `
 
 const StyledMenu = styled.div`
