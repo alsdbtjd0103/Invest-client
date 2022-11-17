@@ -4,7 +4,7 @@ function Banner() {
   return (
     <StyledBanner>
       <GrBitcoin size={24} />
-      <div>Virtual Invest</div>
+      <div style={{overflow:'hidden'}}>Virtual Invest</div>
     </StyledBanner>
   );
 }
@@ -17,8 +17,8 @@ const StyledBanner = styled.div`
   align-items: center;
   justify-content: space-around;
   cursor: pointer;
-  width: 150px;
-  height: 40px;
+  min-width: 150px;
+  min-height: 40px;
   font-size: 16px;
-
+  z-index: 1;
 `;

@@ -1,28 +1,31 @@
 import styled from "styled-components"
+import { Colors } from "../../styles/Colors"
 
 const menuData = [
     {
         id:1,
         title:'About Us',
-        path:'',
+        path:'/',
         
     },
     {
         id:2,
         title:'How To',
-        path:''
+        path:'/'
     },
     {
         id:3,
-        title:'FaQ',
-        path:''
+        title:'FAQ',
+        path:'/'
     }
 ]
 
-function MenuBlock(){
+function MenuBlock({isOpen}){
     return(
-        <StyledContainer>
-
+        <StyledContainer isOpen={isOpen}>
+            {menuData.map((data) => {
+                return <StyledMenu disabled href={data.path}  key={data.id}>{data.title}</StyledMenu>
+            })}
         </StyledContainer>
     )
 }
@@ -33,13 +36,26 @@ const StyledContainer = styled.div`
     display: flex;
     width:100%;
     height:100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    border-style: solid;
-    
+    z-index:${({isOpen}) => {
+        return isOpen ? 0 : -2;
+    }};
+    transition: 0.8s;
+    position: relative;
+    left:${({isOpen}) => {
+        return isOpen ? 0 : '-100px';
+    }};
 `
 
-const StyledMenu = styled.a`
+const StyledMenu = styled.div`
+    font-size: 16px;
+    margin-left: 20px;
+    cursor: pointer;
+    :hover{
+        color:${Colors.primaryColor}
+    }
+
 
 `
