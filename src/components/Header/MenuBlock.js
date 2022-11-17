@@ -39,11 +39,11 @@ const StyledContainer = styled.div`
     justify-content: flex-start;
     align-items: center;
     flex-direction: row;
-    z-index:${({isOpen}) => {
-        return isOpen ? 0 : -999;
-    }};
-    transition: 0.8s;
     position: relative;
+    z-index:${({isOpen}) => {
+        return isOpen ? 0 : -2;
+    }};
+    transition: 0.6s;
     left:${({isOpen}) => {
         return isOpen ? 0 : '-100px';
     }};
@@ -57,6 +57,4 @@ const StyledMenu = styled.div`
     :hover{
         color:${Colors.primaryColor}
     }
-
-
 `

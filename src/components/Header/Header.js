@@ -7,11 +7,11 @@ import Banner from "./Banner";
 import MenuBlock from "./MenuBlock";
 import { CgMenuGridR } from "react-icons/cg";
 import { Colors } from "../../styles/Colors";
-import {BrowserView,MobileView} from 'react-device-detect';
+import { BrowserView} from "react-device-detect";
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [gridMenu,setGridMenu] = useState(false);
+  const [gridMenu, setGridMenu] = useState(false);
   const menuToggle = () => setMenuOpen((previous) => !previous);
   const gridMenuToggle = () => setGridMenu((previous) => !previous);
   return (
@@ -19,13 +19,11 @@ function Header() {
       <HeaderContainer>
         <Banner />
         <BrowserView>
-        <Temper>
-        <StyledCgMenuGridR onClick={gridMenuToggle}>
-          <CgMenuGridR size={30}/>
-        </StyledCgMenuGridR>
-        </Temper>
+          <StyledCgMenuGridR onClick={gridMenuToggle}>
+            <CgMenuGridR size={30} />
+          </StyledCgMenuGridR>
         </BrowserView>
-        <MenuBlock isOpen = {gridMenu}/>
+        <MenuBlock isOpen={gridMenu} />
         <AiOutlineMenu
           size={24}
           style={{ cursor: "pointer" }}
@@ -39,11 +37,6 @@ function Header() {
 
 export default Header;
 
-const Temper = styled.div`
-@media (max-width: 600px) {
-  display: none;
-}
-`
 const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
@@ -59,11 +52,14 @@ const StyledCgMenuGridR = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height:100%;
-  min-width: 100px;
+  height: 100%;
+  width: 100px;
   cursor: pointer;
-  :hover{
-    color:${Colors.primaryColor};
+  :hover {
+    color: ${Colors.primaryColor};
   }
   z-index: 1;
-`;
+  /* @media (max-width: 600px) {
+  display: none;
+} */
+`
