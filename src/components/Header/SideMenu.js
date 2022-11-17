@@ -1,14 +1,9 @@
 import { BsX } from "react-icons/bs";
 import styled from "styled-components";
 import React from "react";
+import SignButton from "../Buttons/SignButton";
 
-function SignButton({ title, onClick, color }) {
-  return (
-    <StyledSignButton color={color} onClick={onClick} >
-      <div aria-disabled>{title}</div>
-    </StyledSignButton>
-  );
-}
+
 
 function SideMenu({ isOpen, setOpen }) {
   return (
@@ -37,21 +32,7 @@ function SideMenu({ isOpen, setOpen }) {
 
 export default SideMenu;
 
-const StyledSignButton = styled.div`
-  display: flex;
-  height: 50px;
-  font-size: 14px;
-  cursor: pointer;
-  width: 90%;
-  align-items: center;
-  justify-content: center;
-  background-color: ${({color}) => color ? color : '#ffffff'};
-  margin-bottom: 20px;
-  :hover{
-    color: ${({color}) => color ? null : 'rgb(252, 213, 53)' };
-    opacity: ${({color}) => color ?0.7 : null };
-  };
-`;
+
 
 const StyledSideMenu = styled.div`
   display: flex;

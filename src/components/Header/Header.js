@@ -59,7 +59,7 @@ const StyledCgMenuGridR = styled.div`
     color: ${Colors.primaryColor};
   }
   z-index: 1;
-  /* @media (max-width: 600px) {
+  @media (max-width: 600px) {
   display: none;
-} */
+}
 `
