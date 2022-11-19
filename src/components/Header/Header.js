@@ -24,11 +24,13 @@ function Header() {
           </StyledCgMenuGridR>
         </BrowserView>
         <MenuBlock isOpen={gridMenu} />
+        <div>
         <AiOutlineMenu
           size={24}
-          style={{ cursor: "pointer" }}
+          style={{ cursor: "pointer"}}
           onClick={menuToggle}
         />
+        </div>
         <SideMenu isOpen={menuOpen} setOpen={menuToggle} />
       </HeaderContainer>
     </>

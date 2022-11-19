@@ -4,10 +4,11 @@ import {AiFillGift,AiFillApple,} from 'react-icons/ai';
 import SignButton from "../Buttons/SignButton";
 import GoogleButton from "../Buttons/GoogleButton";
 import {FcGoogle} from 'react-icons/fc';
-
+import {Link} from 'react-router-dom';
+import { MainAddress } from "../../Address/MainAddress";
 function GrayText(){
     return(
-        <div style={{display:'flex',width:'90%',height:'50px',flexDirection:'row',height:'0.0001px',justifyContent:'center',alignItems:'center',marginBottom:'30px'}}>
+        <div style={{display:'flex',width:'100%',height:'50px',flexDirection:'row',height:'0.0001px',justifyContent:'center',alignItems:'center',marginBottom:'30px'}}>
             <div style={{borderStyle:'solid',borderColor:'#EAECEF',width:'100%',borderWidth:'0.00001px'}}></div>
             <text style={{color:'#707A8A', whiteSpace:'nowrap',paddingLeft:'10px',paddingRight:'10px'}}>or continue with</text>
             <div style={{borderStyle:'solid',borderColor:'#EAECEF',width:'100%',borderWidth:'0.00001px'}}></div>
@@ -21,14 +22,16 @@ function AboutBox() {
         <StyledRootContainer>
             <ItemContainer>
                 <StyledTitle> Buy, trade, and hold 350+ cryptocurrencies on Binance</StyledTitle>
+                <Link to={MainAddress+'/chart'}>
                 <StyledStartText>
                     <AiFillGift size={22} color={Colors.primaryColor} style={{paddingRight:'10px'}}/>
-                    <div>Trade Bitcoin for free</div>
+                    <div style={{textDecorationLine:'none'}}>Trade Bitcoin for free!</div>
                 </StyledStartText>
-                <div style={{width:'80%',display:'flex',flexDirection:'column',justifyContent:'center'}}>
+                </Link>
+                <div style={{width:'100%',display:'flex',flexDirection:'column',justifyContent:'center'}}>
                 <SignButton title={'Sign up with your E-mail'} color={Colors.primaryColor} onClick={()=>console.log('sign up')}/>
                 <GrayText />
-                <div style={{display:'flex' ,flexDirection:'row',justifyContent:"space-around",width:'90%'}}>
+                <div style={{display:'flex' ,flexDirection:'row',width:'100%',justifyContent:'space-around'}}>
                     <GoogleButton title='Google' logo={<FcGoogle/>}/>
                     <GoogleButton title='Apple' logo={<AiFillApple/>}/>
                 </div>
@@ -80,4 +83,5 @@ const StyledStartText = styled.div`
     font-size: 22px;
     color:'#1E2329';
     flex-direction: row;
+    
 `

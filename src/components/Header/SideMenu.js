@@ -22,8 +22,10 @@ function SideMenu({ isOpen, setOpen }) {
             flexDirection:'column'
           }}
         >
+          <div style={{width:'90%',borderRadius:'4px'}}>
           <SignButton title="Login" onClick={() => console.log("asd")} />
           <SignButton title="Register" color = {'rgb(252, 213, 53)'} onClick={() => console.log("asd")} />
+          </div>
         </div>
       </StyledSideMenu>
     </>
