@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/Invest-client/static/css/main.e6c13ad2.css",
-    "main.js": "/Invest-client/static/js/main.51805612.js",
+    "main.js": "/Invest-client/static/js/main.d2d38acf.js",
     "static/js/787.a4b2a71c.chunk.js": "/Invest-client/static/js/787.a4b2a71c.chunk.js",
+    "static/media/coin.png": "/Invest-client/static/media/coin.f4c0d64d6c8886b91a3d.png",
     "index.html": "/Invest-client/index.html",
     "main.e6c13ad2.css.map": "/Invest-client/static/css/main.e6c13ad2.css.map",
-    "main.51805612.js.map": "/Invest-client/static/js/main.51805612.js.map",
+    "main.d2d38acf.js.map": "/Invest-client/static/js/main.d2d38acf.js.map",
     "787.a4b2a71c.chunk.js.map": "/Invest-client/static/js/787.a4b2a71c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.51805612.js"
+    "static/js/main.d2d38acf.js"
   ]
 }
